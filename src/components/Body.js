@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react"; /* This is named export */
 import Shimmer from "./Shimmer"; /* This is default export */
 import { swiggy_api_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
@@ -106,10 +107,12 @@ const Body = () => {
           {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
           {filteredRestaurants.map((restaurant) => {
             return (
-              <RestaurantCard
+              <Link
                 key={restaurant?.info?.id}
-                {...restaurant?.info}
-              />
+                to={"/restaurants/" + restaurant?.info?.id}
+              >
+                <RestaurantCard {...restaurant?.info} />
+              </Link>
             );
           })}
         </div>
