@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import FoodFireLogo from "../Images/Food Fire Logo.png";
 import { LOGO } from "../utils/constants";
 // Title component for display logo
@@ -23,9 +24,15 @@ const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
           <li>
             <i className="fa-solid fa-cart-shopping"></i>
           </li>

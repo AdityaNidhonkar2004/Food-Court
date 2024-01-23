@@ -8,9 +8,9 @@
 
 /* create global variable with :root selector */
 :root {
-  --header-bg-color: rgb(1, 163, 144);
-  --footer-bg-color: rgb(1, 163, 144);
-  --text-color: #000;
+  --header-bg-color: #eb1026;
+  --footer-bg-color: #eb1026;
+  --text-color: white;
   --light-green: #00ad1d;
   --dark-green: #016034;
   --orange: #d97919;
