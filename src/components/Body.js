@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"; /* This is named export */
 import Shimmer from "./Shimmer"; /* This is default export */
 import { swiggy_api_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
@@ -19,6 +20,8 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   // use useEffect for one time call getRestaurants using empty dependency array
   useEffect(() => {
@@ -72,9 +75,16 @@ const Body = () => {
       setFilteredRestaurants(restaurants);
     }
   };
-
+  if (useOnlineStatus === false) {
+    return (
+      <div>
+        <h1>Looks like you are offline</h1>
+        <h1>Check your Internet connection please </h1>
+      </div>
+    );
+  }
   // if allRestaurants is empty don't render restaurants cards
-  if (!allRestaurants) return null;
+  // if (!allRestaurants) return null;
 
   return (
     <>
@@ -108,6 +118,7 @@ const Body = () => {
           {filteredRestaurants.map((restaurant) => {
             return (
               <Link
+                style={{ textDecoration: "none", color: "black" }}
                 key={restaurant?.info?.id}
                 to={"/restaurants/" + restaurant?.info?.id}
               >

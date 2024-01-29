@@ -14,3 +14,6 @@ export const shimmer_card_unit = 20;
 
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.46097689929288&lng=73.8516780259033&restaurantId=";
+
+export const MENU_IMG_LINK =
+  " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";

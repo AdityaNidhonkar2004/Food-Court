@@ -25,13 +25,25 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link style={{ textDecoration: "none", color: "white" }} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/about"
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/contact"
+            >
+              Contact
+            </Link>
           </li>
           <li>
             <i className="fa-solid fa-cart-shopping"></i>

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Select all CSS */
 * {
   margin: 0;
@@ -47,12 +51,15 @@
   display: flex;
   align-items: baseline;
   justify-content: space-evenly;
+  text-decoration: none;
 }
 
 .nav-items > ul > li {
   padding: 10px;
   font-size: large;
   cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .nav-items > ul > li .logout-btn,
@@ -64,6 +71,7 @@
   border-radius: 5px;
   display: flex;
   margin-right: 15px;
+  text-decoration: none;
 }
 
 .nav-items > ul > li .logout-btn {
@@ -141,6 +149,7 @@
   padding: 10px;
   margin: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .card:hover {
@@ -301,6 +310,50 @@
     margin: 70px auto 0px;
   }
 }
-.menu {
+/* .menu-card {
   margin-top: 10%;
+  /* align-items: center; */
+/* justify-content: center; */
+/* display: flex; */
+/* }
+/* .menu-image {
+  width: 250px;
+  height: 250px;
+  margin-top: 0%;
+  margin-left: 40%;
+  margin-bottom: 40%;
+}
+*/
+.menu {
+  margin-left: 575px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: xx-large;
+}
+.menu-des {
+  width: 650px;
+  margin-left: 275px;
+  justify-content: space-evenly;
+}
+.menu-image {
+  width: 150px;
+  height: 150px;
+}
+.rating {
+  background-color: #00ad1d;
+  /* padding: 5px; */
+  width: 45px;
+  border-radius: 15px;
+  color: #e6e6e6;
+}
+.user-info {
+  margin-top: 100px;
+  padding: 5px;
+  border: 1px solid black;
+}
+.category {
+  margin-right: 550px;
+}
+.item-image {
+  width: 500px;
 }
