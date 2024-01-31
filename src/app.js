@@ -7,9 +7,11 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 import Error from "./components/ErrorElement";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Footer from "./Components/Footer";
 
 /* My Food App structure will look like this, 
@@ -33,10 +35,12 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // AppLayout component to render: Header, Body and Footer Component
 const AppLayout = () => {
   return (
-    <React.Fragment>
-      <Header />
-      <Outlet />
-    </React.Fragment>
+    <Provider store={appStore}>
+      <React.Fragment>
+        <Header />
+        <Outlet />
+      </React.Fragment>
+    </Provider>
   );
 };
 
@@ -55,8 +59,8 @@ const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/restaurants/:resId",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 // import FoodFireLogo from "../Images/Food Fire Logo.png";
 import { LOGO } from "../utils/constants";
+import { useSelector } from "react-redux";
 // Title component for display logo
 const Title = () => (
   <a href="/">
@@ -18,7 +19,9 @@ const Title = () => (
 const Header = () => {
   // use useState for user logged in or logged out
   const [isLoggedin, setIsLoggedin] = useState(true);
-
+  //subscribing to the store using a selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div className="header">
       <Title />
@@ -38,11 +41,8 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link
-              style={{ textDecoration: "none", color: "white" }}
-              to="/contact"
-            >
-              Contact
+            <Link style={{ textDecoration: "none", color: "white" }} to="/cart">
+              🛒-({cartItems.length})
             </Link>
           </li>
           <li>
