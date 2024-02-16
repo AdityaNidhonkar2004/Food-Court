@@ -12,6 +12,8 @@ import Error from "./components/ErrorElement";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Footer from "./components/footer";
+
 // import Footer from "./Components/Footer";
 
 /* My Food App structure will look like this, 
@@ -39,6 +41,7 @@ const AppLayout = () => {
       <React.Fragment>
         <Header />
         <Outlet />
+        <Footer />
       </React.Fragment>
     </Provider>
   );

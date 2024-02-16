@@ -5,7 +5,7 @@ import { LOGO } from "../utils/constants";
 import { useSelector } from "react-redux";
 // Title component for display logo
 const Title = () => (
-  <a href="/">
+  <a href="/about">
     <img
       className="logo"
       src={LOGO}
@@ -28,16 +28,16 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link style={{ textDecoration: "none", color: "white" }} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
             <Link
               style={{ textDecoration: "none", color: "white" }}
               to="/about"
             >
-              About
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link style={{ textDecoration: "none", color: "white" }} to="/">
+              Order
             </Link>
           </li>
           <li>
